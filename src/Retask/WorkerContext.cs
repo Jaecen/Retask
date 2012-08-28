@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Retask.Worker
+namespace Retask
 {
-	class WorkerContext : IWorkerContext
+	public class WorkerContext : IWorkerContext
 	{
 		public ZMQ.Context ZmqContext
 		{ get; protected set; }
@@ -11,10 +11,10 @@ namespace Retask.Worker
 		public ZMQ.Socket InboundSocket
 		{ get; protected set; }
 
-		public IDictionary<string, string> Configuration
+		public IConfigurationDictionary Configuration
 		{ get; protected set; }
 
-		public WorkerContext(ZMQ.Context zmqContext, ZMQ.Socket inboundSocket, IDictionary<string, string> configuration)
+		public WorkerContext(ZMQ.Context zmqContext, ZMQ.Socket inboundSocket, IConfigurationDictionary configuration)
 		{
 			ZmqContext = zmqContext;
 			InboundSocket = inboundSocket;

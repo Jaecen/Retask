@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Retask.Worker
+namespace Retask
 {
-	interface IWorker : IDisposable
+	public interface IWorker : IDisposable
 	{
 		void MessageReceived(IWorkerContext workerContext);
 	}

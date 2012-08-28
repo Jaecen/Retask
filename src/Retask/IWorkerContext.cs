@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Retask.Worker
+namespace Retask
 {
-	interface IWorkerContext
+	public interface IWorkerContext
 	{
-		IDictionary<string, string> Configuration { get; }
 		ZMQ.Socket InboundSocket { get; }
 		ZMQ.Context ZmqContext { get; }
+		IConfigurationDictionary Configuration { get; }
 	}
 }
